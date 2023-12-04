@@ -24,7 +24,7 @@ def list_products(
     query_params: ProductListQueryParams = Depends(),
     session: Session = Depends(get_db_session),
 ):
-    return product_service.list(session, query_params)
+    return product_service.lists(session, query_params)
 
 
 @router.post("/products", response_model=DetailProduct)

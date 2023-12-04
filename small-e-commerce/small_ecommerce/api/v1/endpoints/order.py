@@ -21,7 +21,7 @@ def list_orders(
     session: Session = Depends(get_db_session),
     current_user: User = Depends(get_current_active_user),
 ):
-    return order_service.list(session, current_user, query_params)
+    return order_service.lists(session, current_user, query_params)
 
 
 @router.post("/orders", response_model=order_schema.Order)

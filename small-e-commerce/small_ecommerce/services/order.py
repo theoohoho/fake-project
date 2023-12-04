@@ -10,7 +10,7 @@ from small_ecommerce.model import Order, OrderProduct, Product, User
 from small_ecommerce.schemas import order as order_schema
 
 
-def list(session: Session, user: User, query_params: OrderListQueryParams):
+def lists(session: Session, user: User, query_params: OrderListQueryParams):
     where_clauses = []
     if user.role != UserRole.manager:
         where_clauses = [Order.user_id == user.id]

@@ -17,7 +17,7 @@ from small_ecommerce.schemas.product import (
 )
 
 
-def list(session: Session, query_params: ProductListQueryParams):
+def lists(session: Session, query_params: ProductListQueryParams):
     products = crud.product.get_multi(
         session,
         where_clauses=[
